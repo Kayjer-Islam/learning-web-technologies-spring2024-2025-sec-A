@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <table align="center" width="60%" cellspacing="10">
+        <tr>
+            <td colspan="2" align="center">
+                <h3>Registration Form</h3>
+            </td>
+        </tr>
+        <form action="">
+            <tr>
+                <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" name="first_name" placeholder="First Name"></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Last Name:</label></td>
+                <td><input type="text" name="last_name" placeholder="Last Name"></td>
+            </tr>
+            <tr>
+                <td><label for="ID">ID:</label></td>
+                <td><input type="number" name="id" placeholder="Enter your Id"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" name="email" placeholder="Enter email"></td>
+            </tr>
+            <tr>
+                <td><label for="Password">Password:</label></td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="date">Date of Birth:</label></td>
+                <td><input type="date" name="dob"></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="female">Female
+                    <input type="radio" name="gender" value="other">Other
+                </td>
+            </tr>
+            <tr>
+                <td><label for="checkbox">Interest:</label></td>
+                <td>
+                    <input type="checkbox" name="interest" value="game"> Playing game
+                    <input type="checkbox" name="interest" value="reading"> Reading book
+                    <input type="checkbox" name="interest" value="music"> Listening to songs
+                    <input type="checkbox" name="interest" value="sports"> Sports activities
+                </td>
+            </tr>
+            <tr>
+                <td><label for="department">Department:</label></td>
+                <td>
+                    <select name="department">
+                        <option value="cse">CSE</option>
+                        <option value="eee">EEE</option>
+                        <option value="bba">BBA</option>
+                        <option value="ipe">IPE</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="image">Image:</label></td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address:</label></td>
+                <td><textarea name="address"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="file:///D:/Webtech/Lab%20Pf-1/LogIn.html"><button type="button">submit</button></a>
+                    <input type="button" value="Back">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>
