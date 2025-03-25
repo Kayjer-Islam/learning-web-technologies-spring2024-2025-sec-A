@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValidateDate | Date of birth</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Date of Birth</legend>
+        <table>
+            <tr>
+                <th>dd</th>
+                <th>mm</th>
+                <th>yyyy</th>
+            </tr>
+            <tr>
+                <td><input type="number" id="dd" min="1" max="31"></td>
+                <td><input type="number" id="mm" min="1" max="12"></td>
+                <td><input type="number" id="yyyy" min="1900" max="2016"></td>
+            </tr>
+        </table>
+        <hr>
+        <input type="button" value="SUBMIT" onclick="ValidateDate()">
+    </fieldset>
+
+    <script>
+        function ValidateDate() {
+            let dd = document.getElementById("dd").value.trim();
+            let mm = document.getElementById("mm").value.trim();
+            let yyyy = document.getElementById("yyyy").value.trim();
+
+            if (dd === "" || mm === "" || yyyy === "") {
+                alert("Date fields cannot be empty.");
+                return;
+            }
+
+            if (!(dd >= 1 && dd <= 31)) {
+                alert("Day must be between 1 and 31.");
+                return;
+            }
+            if (!(mm >= 1 && mm <= 12)) {
+                alert("Month must be between 1 and 12.");
+                return;
+            }
+            if (!(yyyy >= 1900 && yyyy <= 2024)) {
+                alert("Year must be between 1900 and 2024.");
+                return;
+            }
+
+            alert("Valid date of birth!");
+        }
+    </script>
+</body>
+</html>
