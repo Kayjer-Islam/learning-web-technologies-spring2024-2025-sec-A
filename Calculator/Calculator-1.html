@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+</head>
+<body>
+  <div id="calculator"></div>
+
+  <script>
+    const calculator = document.getElementById('calculator');
+
+    calculator.style.width = '260px';
+    calculator.style.margin = '100px auto';
+    calculator.style.padding = '20px';
+    calculator.style.border = '2px solid #333';
+    calculator.style.borderRadius = '10px';
+    calculator.style.backgroundColor = '#a977ff';
+    calculator.style.fontFamily = 'Arial, sans-serif';
+
+    const display = document.createElement('input');
+    display.type = 'text';
+    display.id = 'display';
+    display.disabled = true;
+    display.style.width = '100%';
+    display.style.height = '40px';
+    display.style.marginBottom = '15px';
+    display.style.fontSize = '20px';
+    display.style.textAlign = 'right';
+    display.style.border = '1px solid #ccc';
+    display.style.borderRadius = '5px';
+    display.style.paddingRight = '10px';
+    display.style.backgroundColor = 'white';
+    calculator.appendChild(display);
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.style.display = 'grid';
+    buttonContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
+    buttonContainer.style.gap = '10px';
+    calculator.appendChild(buttonContainer);
+
+    const buttons = [
+      '7', '8', '9', '+',
+      '4', '5', '6', '-',
+      '1', '2', '3', '*',
+      '0', '%', '/', '=',
+                    'C'
+    ];
+
+    function handleClick(event) {
+      const value = event.target.innerText;
+      if (value === 'C') {
+        display.value = '';
+      } else if (value === '=') {
+        try {
+          const expression = display.value.replace(/%/g, '/100');
+          display.value = eval(expression);
+        } catch {
+          display.value = 'Error';
+        }
+      } else {
+        display.value += value;
+      }
+    }
+
+    buttons.forEach(char => {
+      const button = document.createElement('button');
+      button.innerText = char;
+      button.style.padding = '15px';
+      button.style.fontSize = '18px';
+      button.style.cursor = 'pointer';
+      button.style.borderRadius = '5px';
+      button.style.border = '1px solid #aaa';
+      button.style.backgroundColor = '#ffc277';
+      button.style.transition = '0.2s';
+
+
+      button.addEventListener('click', handleClick);
+
+      buttonContainer.appendChild(button);
+    });
+  </script>
+</body>
+</html>
